@@ -3,15 +3,11 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Filter } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
+import ProductSection from "@/components/ProductSection";
+import { SORT_OPTIONS } from "@/constants";
 
-//array of dropdown content
-const SORT_OPTIONS=[
-  {name:"None",value:'none'},
-  {name:"Price: Low to High",value:"price-asc"},
-  {name:"Price: High to Low",value:"price-desc"}
-] as const //we have used "as const" to make it readonly
+
 
 export default function Home() {
 
@@ -59,8 +55,10 @@ export default function Home() {
 
         </div>
         </div>
+
+
+        <ProductSection/>
     </main>
   );
 }
 
-// id,color,image,name,price,size
